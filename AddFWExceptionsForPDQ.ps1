@@ -23,4 +23,4 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\Standa
 New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\" -Name "FirewallRules" -ErrorAction SilentlyContinue
 New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\" -Name WINRM-HTTP-In-TCP-PUBLIC -Value "v2.31|Action=Allow|Active=TRUE|Dir=In|Protocol=6|Profile=Public|LPort=5985|RA4=LocalSubnet|RA6=LocalSubnet|App=System|Name=@FirewallAPI.dll,-30253|Desc=@FirewallAPI.dll,-30256|EmbedCtxt=@FirewallAPI.dll,-30267|"  -ErrorAction SilentlyContinue
 New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\" -Name WINRM-HTTP-In-TCP -Value "v2.31|Action=Allow|Active=TRUE|Dir=In|Protocol=6|Profile=Domain|Profile=Private|LPort=5985|App=System|Name=@FirewallAPI.dll,-30253|Desc=@FirewallAPI.dll,-30256|EmbedCtxt=@FirewallAPI.dll,-30267|"  -ErrorAction SilentlyContinue
-Restart-Computer -ComputerName localhost -Timeout 0
+Restart-Computer -ComputerName localhost
